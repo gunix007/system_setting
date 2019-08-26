@@ -5,8 +5,6 @@
 set nocompatible
 " required for vundle vim
 filetype off
-" need to get Vundle first
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -109,7 +107,6 @@ set fileencoding=utf-8
 set termencoding=utf-8
 set langmenu=zh_CN.UTF-8
 set helplang=cn
-" incremental search
 " show a preview of the first match based on the search field
 set incsearch
 " high light search. same as 'set hls'
@@ -120,10 +117,8 @@ set scrolloff=3
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 " mapping for counting the last pattern
 nnoremap <silent> <Leader>* :%s///gn<CR>
-" do case insensitive matching, while 'set noignorecase' option do case sensitive matching
+" ignore case, while 'set noignorecase' option is case sensitivity
 set ignorecase
-" do smart case matching
-set smartcase
 " display the line number
 set number
 " automatic indent
@@ -140,9 +135,8 @@ set wildmenu
 set wildmode=list,full
 " set complete-=k complete+=k
 " navigate away from a modified file without first saving it.
-" hide buffers when they are abandoned
 set hidden
-" enable mouse usage (all modes)
+" enable mouse in all modes
 " set mouse=a
 " show (partial) command in status line
 set showcmd
@@ -207,6 +201,11 @@ nnoremap <f5> :!ctags -R<CR>
 nnoremap & :&&<CR>
 " mapping & as :&& to preserves substitute flags in visual mode
 xnoremap & :&&<CR>
+
+" imformation from: help e526
+set viminfo='50,<1000
+" '50       Marks will be remembered for the last 50 files you edited.
+" <1000     Contents of registers (up to 1000 lines each) will be remembered.
 
 " mapping for scrolling through the buffer lists
 nnoremap <silent> [b :bprevious<CR>
@@ -357,6 +356,8 @@ autocmd FileType java,c,cpp set commentstring=//\ %s
 """""""""""""""""" vim-colors-solarized config start
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
+" set t_Co=256
+" let g:solarized_termcolors=256
 set background=dark
 " colorscheme solarized
 colorscheme elflord
