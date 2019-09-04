@@ -1,0 +1,4 @@
+# gitconfig
+git config --global user.name gunix
+git config --global user.email gzg1211@foxmail.com
+git config --global core.pager 'less -x1,5'

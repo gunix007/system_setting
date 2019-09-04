@@ -11,6 +11,6 @@
 # alias ls='ls --color=auto'
 
 alias vi='vim'
-# alias ifconfig='ip -c a'
+alias ifconfig='ip -c a'
 
 
